@@ -5,12 +5,12 @@ function easyHTTP() {
 }
 
 // Make an HTTP GET Request Method
-easyHTTP.prototype.get = function(url, callback) {
+easyHTTP.prototype.get = function (url, callback) {
     this.http.open('GET', url, true);
 
     // Capture the state of "this"
     let self = this;
-    this.http.onload = function() {
+    this.http.onload = function () {
         if (self.http.status === 200) {
             callback(null, self.http.responseText);
         } else {
@@ -33,6 +33,17 @@ easyHTTP.prototype.get = function(url, callback) {
 // }
 
 // Make an HTTP POST Request Method
+easyHTTP.prototype.post = function (url, data, callback) {
+    this.http.open('POST', url, true);
+    this.http.setRequestHeader('Content-type', 'application/json');
+
+    let self = this;
+    this.http.onload = function () {
+        callback(null, self.http.responseText);
+    }
+
+    this.http.send(JSON.stringify(data));
+}
 
 // Make an HTTP PUT Request Method
 
