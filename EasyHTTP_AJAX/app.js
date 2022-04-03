@@ -17,7 +17,7 @@ http.get(`${url}/posts`, function (err, posts) {
 })
 
 // Get Single Post retrieves single user from id param
-http.get(`${url}/posts/:${id}`, function (err, post) {
+http.get(`${url}/posts/${id}`, function (err, post) {
     if (err) {
         console.log(err);
     } else {
