@@ -33,3 +33,12 @@ http.post(`${url}/posts`, data, function (err, post) {
         console.log(post);
     }
 });
+
+// Update Post
+http.put(`${url}/posts/${id}`, data, function(err, post) {
+  if(err) {
+    console.log(err);
+  } else {
+    console.log(post);
+  }
+});
