@@ -35,10 +35,19 @@ http.post(`${url}/posts`, data, function (err, post) {
 });
 
 // Update Post
-http.put(`${url}/posts/${id}`, data, function(err, post) {
-  if(err) {
-    console.log(err);
-  } else {
-    console.log(post);
-  }
+http.put(`${url}/posts/${id}`, data, function (err, post) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(post);
+    }
+});
+
+// Delete Post
+http.delete(`${url}/posts/${id}`, function (err, response) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(response);
+    }
 });
