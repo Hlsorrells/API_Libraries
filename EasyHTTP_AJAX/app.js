@@ -1,5 +1,6 @@
 const http = new easyHTTP;
 const url = 'https://jsonplaceholder.typicode.com'
+const id = 1
 
 // Create Data
 const data = {
