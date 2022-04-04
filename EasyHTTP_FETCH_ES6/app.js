@@ -1,5 +1,6 @@
 const http = new EasyHTTP;
 const url = 'https://jsonplaceholder.typicode.com';
+let id = 2;
 
 // User Data
 const data = {
@@ -15,5 +16,10 @@ http.get(`${url}/users`)
 
 // Create User
 http.post(`${url}/users`, data)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+
+// Update Post
+http.put(`${url}/users/${id}`, data)
     .then(data => console.log(data))
     .catch(err => console.log(err));
