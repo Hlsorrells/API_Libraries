@@ -23,3 +23,8 @@ http.post(`${url}/users`, data)
 http.put(`${url}/users/${id}`, data)
     .then(data => console.log(data))
     .catch(err => console.log(err));
+
+// Delete User
+http.delete(`${url}/users/${id}`)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
